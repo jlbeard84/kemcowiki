@@ -59,6 +59,7 @@ public class Program
         });
 
         builder.Services.AddSingleton<IDBService, DBService>();
+        builder.Services.AddSingleton<ISearchService, SearchService>();
 
         var app = builder.Build();
 
