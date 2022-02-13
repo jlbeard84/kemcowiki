@@ -269,7 +269,7 @@ namespace api.Services
             return result;
         }
 
-        private QueryDefinition GetAllEntityQueryDefinition(
+        protected QueryDefinition GetAllEntityQueryDefinition(
             string containerName)
         {
             var queryString = $"SELECT * FROM {containerName}";
@@ -278,7 +278,7 @@ namespace api.Services
             return queryDefinition;
         }
 
-        private QueryDefinition GetSingleEntityByIdQueryDefinition(
+        protected QueryDefinition GetSingleEntityByIdQueryDefinition(
             string containerName,
             string id)
         {
@@ -302,7 +302,7 @@ namespace api.Services
             return queryDefinition;
         }
 
-        private async Task<List<T>> GetQueryResults<T>(
+        protected async Task<List<T>> GetQueryResults<T>(
             string containerName,
             string partitionName,
             QueryDefinition queryDefinition)
@@ -327,7 +327,7 @@ namespace api.Services
             return results;
         }
 
-        private async Task<Container> GetDbContainer(
+        protected async Task<Container> GetDbContainer(
             string containerName,
             string partitionName)
         {
